@@ -1,56 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Download File</title>
+<title>Secure Download</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 body{
-    font-family:Arial;
-    background:#0f172a;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+    background:linear-gradient(180deg,#020617,#0f172a);
     color:#fff;
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    height:100vh;
 }
-.box{
+
+.container{
+    width:92%;
+    max-width:420px;
     background:#020617;
-    padding:25px;
-    border-radius:12px;
-    width:90%;
-    max-width:380px;
+    border-radius:16px;
+    padding:24px;
+    box-shadow:0 20px 40px rgba(0,0,0,.6);
     text-align:center;
 }
-.btn{
-    background:#22c55e;
-    color:#000;
-    padding:14px;
-    border-radius:10px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:15px;
+
+.icon{
+    font-size:48px;
+    margin-bottom:10px;
 }
+
+h1{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.info{
+    font-size:14px;
+    opacity:.75;
+    margin-bottom:20px;
+}
+
+.file-box{
+    background:#020617;
+    border:1px solid #1e293b;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:20px;
+}
+
+.file-box p{
+    font-size:14px;
+    margin-bottom:4px;
+}
+
+.size{
+    font-size:12px;
+    opacity:.6;
+}
+
+.download-btn{
+    width:100%;
+    padding:16px;
+    border-radius:12px;
+    border:none;
+    font-size:18px;
+    font-weight:700;
+    background:#22c55e;
+    color:#020617;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.download-btn:hover{
+    transform:scale(0.98);
+    background:#16a34a;
+}
+
 .note{
     font-size:12px;
     opacity:.6;
-    margin-top:10px;
+    margin-top:12px;
+    line-height:1.4;
+}
+
+.footer{
+    margin-top:18px;
+    font-size:11px;
+    opacity:.4;
 }
 </style>
 </head>
+
 <body>
 
-<div class="box">
-    <h2>📦 Android WebView Guide</h2>
-    <p>File size: 4.2 MB (PDF)</p>
+<div class="container">
 
-    <div class="btn" onclick="openGate()">Download</div>
+    <div class="icon">📦</div>
 
-    <div class="note">
-        Ads support this free file.  
-        Download starts after short wait.
+    <h1>Secure File Download</h1>
+    <p class="info">Fast • Safe • Verified</p>
+
+    <div class="file-box">
+        <p><strong>Android WebView Guide</strong></p>
+        <p class="size">File size: 4.2 MB (PDF)</p>
     </div>
+
+    <button class="download-btn" onclick="openGate()">
+        Download Now
+    </button>
+
+    <p class="note">
+        Ads help keep this download free.  
+        You may need to wait a few seconds.
+    </p>
+
+    <div class="footer">
+        © 2026 File Distribution System
+    </div>
+
 </div>
 
 <script>
