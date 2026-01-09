@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Download File</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    font-family:Arial;
+    background:#0f172a;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+}
+.box{
+    background:#020617;
+    padding:25px;
+    border-radius:12px;
+    width:90%;
+    max-width:380px;
+    text-align:center;
+}
+.btn{
+    background:#22c55e;
+    color:#000;
+    padding:14px;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+.note{
+    font-size:12px;
+    opacity:.6;
+    margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>📦 Android WebView Guide</h2>
+    <p>File size: 4.2 MB (PDF)</p>
+
+    <div class="btn" onclick="openGate()">Download</div>
+
+    <div class="note">
+        Ads support this free file.  
+        Download starts after short wait.
+    </div>
+</div>
+
+<script>
+function openGate(){
+    window.open("gate.html","_blank");
+}
+</script>
+
+</body>
+</html>

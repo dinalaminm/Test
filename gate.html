@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Please Wait</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    font-family:Arial;
+    background:#020617;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.box{
+    text-align:center;
+}
+.timer{
+    font-size:40px;
+    margin:20px 0;
+}
+.btn{
+    background:#ef4444;
+    color:#fff;
+    padding:12px 20px;
+    border-radius:8px;
+    font-size:16px;
+    display:none;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>⏳ Please wait</h2>
+    <p>Advertisement loading…</p>
+
+    <div class="timer" id="time">30</div>
+
+    <div class="btn" id="closeBtn" onclick="finish()">Close & Download</div>
+</div>
+
+<!-- Adsterra Direct / Pop Script -->
+<script>
+const AD_LINK = "google.com";
+const FILE_LINK = "dinalaminm.blogspot.com";
+
+// Fire ad immediately
+window.open(AD_LINK,"_blank");
+
+let time = 30;
+const timer = setInterval(()=>{
+    time--;
+    document.getElementById("time").innerText = time;
+
+    if(time <= 0){
+        clearInterval(timer);
+        document.getElementById("closeBtn").style.display="inline-block";
+    }
+},1000);
+
+function finish(){
+    window.opener.location.href = FILE_LINK;
+    window.close();
+}
+</script>
+
+</body>
+</html>
