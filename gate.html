@@ -1,71 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Please Wait</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-    font-family:Arial;
-    background:#020617;
+    font-family:system-ui,-apple-system,BlinkMacSystemFont;
+    background:radial-gradient(circle at top,#020617,#000);
     color:#fff;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-}
-.box{
     text-align:center;
 }
-.timer{
-    font-size:40px;
-    margin:20px 0;
+
+.container{
+    width:92%;
+    max-width:420px;
 }
-.btn{
-    background:#ef4444;
-    color:#fff;
-    padding:12px 20px;
-    border-radius:8px;
-    font-size:16px;
-    display:none;
-    cursor:pointer;
+
+/* 3D Loader */
+.loader{
+    width:90px;
+    height:90px;
+    margin:20px auto;
+    border-radius:50%;
+    border:6px solid rgba(255,255,255,.1);
+    border-top:6px solid #22c55e;
+    animation:spin 1.2s linear infinite;
+    box-shadow:0 0 25px rgba(34,197,94,.6);
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+h2{
+    font-size:20px;
+    margin-bottom:6px;
+}
+
+.timer{
+    font-size:34px;
+    font-weight:700;
+    color:#22c55e;
+    margin:12px 0;
+}
+
+.note{
+    font-size:12px;
+    opacity:.6;
+    margin-top:10px;
 }
 </style>
+
+<!-- 🔥 Social Bar Ad Script -->
+<script src="https://pl27303638.effectivegatecpm.com/74/e4/7c/74e47cca556c1d25aa7f5f4744c4f640.js"></script>
+
 </head>
+
 <body>
 
-<div class="box">
-    <h2>⏳ Please wait</h2>
-    <p>Advertisement loading…</p>
+<div class="container">
 
-    <div class="timer" id="time">30</div>
+    <h2>Preparing your download</h2>
+    <p class="note">Please wait a moment…</p>
 
-    <div class="btn" id="closeBtn" onclick="finish()">Close & Download</div>
+    <div class="loader"></div>
+
+    <div class="timer">
+        <span id="time">30</span>s
+    </div>
+
+    <p class="note">Ads help keep this download free</p>
+
 </div>
 
-<!-- Adsterra Direct / Pop Script -->
 <script>
-const AD_LINK = "google.com";
-const FILE_LINK = "dinalaminm.blogspot.com";
+/* ========= CONFIG ========= */
+const DIRECT_LINK = "https://www.effectivegatecpm.com/s5e3r8h0g?key=6625be59defdc02345118754d3cb412e";
+const FILE_LINK   = "https://YOUR_REAL_FILE_LINK";
+/* ========================== */
 
-// Fire ad immediately
-window.open(AD_LINK,"_blank");
+/* 1️⃣ Fire Direct Link once */
+window.open(DIRECT_LINK,"_blank");
 
+/* 2️⃣ Countdown + Auto Download */
 let time = 30;
-const timer = setInterval(()=>{
+const t = document.getElementById("time");
+
+const countdown = setInterval(()=>{
     time--;
-    document.getElementById("time").innerText = time;
+    t.innerText = time;
 
     if(time <= 0){
-        clearInterval(timer);
-        document.getElementById("closeBtn").style.display="inline-block";
+        clearInterval(countdown);
+        window.location.href = FILE_LINK;
     }
 },1000);
-
-function finish(){
-    window.opener.location.href = FILE_LINK;
-    window.close();
-}
 </script>
 
 </body>
